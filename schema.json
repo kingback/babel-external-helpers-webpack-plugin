@@ -1,0 +1,20 @@
+{
+  "title": "BabelExternalHelpersWebpackPluginOptions",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "babel": {
+      "description": "Resolved path or module object of \"@babel/core\" or \"babel-core\"",
+      "type": ["string", "object"]
+    },
+    "whitelist": {
+      "description": "Whitelist of babel helpers",
+      "type": ["null", "string", "array"]
+    },
+    "outputType": {
+      "description": "OutputType",
+      "enum": ["global", "umd", "var"]
+    }
+  },
+  "required": ["babel"]
+}
