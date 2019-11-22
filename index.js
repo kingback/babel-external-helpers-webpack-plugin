@@ -23,9 +23,9 @@ function includes(r, s) {
 }
 
 function getWhitelist(code) {
-  const helpers = (code || "").match(/babelHelpers\.(\w+)/g);
+  const helpers = (code || "").match(/babelHelpers(\.|\["|\[')(\w+)/g);
   return helpers && helpers.length
-    ? uniq(helpers).map(m => m.split(".")[1])
+    ? uniq(helpers.map(m => m.split(/(\.|\["|\[')/)[2]))
     : [];
 }
 
